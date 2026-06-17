@@ -180,13 +180,13 @@ function SentenceModule() {
             label={t.smNoun.split("(")[0].trim()}
             value={noun}
             onChange={setNoun}
-            placeholder="e.g. architect"
+            placeholder="e.g. Architect"
           />
           <FieldInput
             label={t.smVerb.split("(")[0].trim()}
             value={verb}
             onChange={setVerb}
-            placeholder="e.g. design"
+            placeholder="e.g. Design"
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -244,7 +244,7 @@ function SentenceModule() {
           label={t.smTopic}
           value={topic}
           onChange={setTopic}
-          placeholder="e.g. sustainability"
+          placeholder="e.g. Sustainability"
         />
         <div className="space-y-3">
           <Label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
@@ -386,8 +386,8 @@ function DialogueModule() {
   const [topic, setTopic] = useState(
     "",
   );
-  const [personaA, setPersonaA] = useState("Teacher");
-  const [personaB, setPersonaB] = useState("Student");
+  const [personaA, setPersonaA] = useState("");
+  const [personaB, setPersonaB] = useState("");
   const [turns, setTurns] = useState(6);
   const [level, setLevel] = useState<"Beginner" | "Intermediate" | "Advanced">(
     "Intermediate",
@@ -420,11 +420,13 @@ function DialogueModule() {
             label={t.dmPersonaA}
             value={personaA}
             onChange={setPersonaA}
+            placeholder="e.g. Teacher"
           />
           <FieldInput
             label={t.dmPersonaB}
             value={personaB}
             onChange={setPersonaB}
+            placeholder="e.g. Student"
           />
         </div>
         <div className="space-y-3">
