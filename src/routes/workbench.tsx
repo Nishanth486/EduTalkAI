@@ -124,8 +124,8 @@ function Workbench() {
 function SentenceModule() {
   const fn = useServerFn(generateSentence);
   const { t } = useI18n();
-  const [noun, setNoun] = useState("architect");
-  const [verb, setVerb] = useState("design");
+  const [noun, setNoun] = useState("");
+  const [verb, setVerb] = useState("");
   const [tense, setTense] = useState<
     | "Present Simple"
     | "Present Continuous"
@@ -139,7 +139,7 @@ function SentenceModule() {
   const [gender, setGender] = useState<"Neutral" | "Masculine" | "Feminine">(
     "Neutral",
   );
-  const [topic, setTopic] = useState("sustainability");
+  const [topic, setTopic] = useState("");
   const [complexity, setComplexity] = useState<
     "Foundational" | "Intermediate" | "Academic"
   >("Intermediate");
@@ -384,7 +384,7 @@ function DialogueModule() {
   const fn = useServerFn(generateDialogue);
   const { t } = useI18n();
   const [topic, setTopic] = useState(
-    "planning a school project on renewable energy",
+    "",
   );
   const [personaA, setPersonaA] = useState("Teacher");
   const [personaB, setPersonaB] = useState("Student");
@@ -412,6 +412,7 @@ function DialogueModule() {
             onChange={(e) => setTopic(e.target.value)}
             rows={3}
             maxLength={160}
+            placeholder="Describe your topic..."
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
