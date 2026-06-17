@@ -1,0 +1,12 @@
+# EduTalk AI
+
+> AI-powered sentence and dialogue generator that helps students form grammatically correct sentences, build dialogues, and learn from images.
+
+EduTalk AI combines NLP and image analysis to assist learners and educators in
+language learning. Students set parameters (noun, verb, tense, gender, topic)
+or upload an image, and the system produces accurate, pedagogically annotated
+sentences and dialogues.
+
+## Pages
+- [Home](/): Product overview, features, pricing.
+- [Workbench](/workbench): Interactive sentence, dialogue, and image-to-sentence generator.
