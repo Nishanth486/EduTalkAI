@@ -1,13 +1,7 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": ".output/public",
   "installCommand": "npm install",
   "framework": null,
-  "functions": {
-    "api/**": {
-      "runtime": "@vercel/node@5.8.17"
-    }
-  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/server" }
   ]
