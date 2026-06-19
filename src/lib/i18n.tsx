@@ -29,6 +29,8 @@ export interface Translations {
   heroFieldNoun: string;
   heroFieldVerb: string;
   heroFieldSentence: string;
+  heroFieldNounValue: string;
+  heroFieldVerbValue: string;
   heroGrammarFeedback: string;
   heroToneNote: string;
   // Features section
@@ -132,6 +134,34 @@ export interface Translations {
   imCopied: string;
   // Language toggle
   langToggleLabel: string;
+  // Placeholders
+  phNoun: string;
+  phVerb: string;
+  phTopic: string;
+  phDialogueTopic: string;
+  phPersonaA: string;
+  phPersonaB: string;
+  // Tense options
+  tensePresSimple: string;
+  tensePresContinuous: string;
+  tensePresPerf: string;
+  tensePastSimple: string;
+  tensePastContinuous: string;
+  tensePastPerf: string;
+  tenseFutSimple: string;
+  tenseFutContinuous: string;
+  // Gender options
+  genderNeutral: string;
+  genderMasculine: string;
+  genderFeminine: string;
+  // Complexity options
+  complexityFoundational: string;
+  complexityIntermediate: string;
+  complexityAcademic: string;
+  // Level options
+  levelBeginner: string;
+  levelIntermediate: string;
+  levelAdvanced: string;
 }
 
 // ── English strings ─────────────────────────────────────────────────
@@ -154,6 +184,8 @@ const en: Translations = {
   heroFieldNoun: "Subject (Noun)",
   heroFieldVerb: "Action (Verb)",
   heroFieldSentence: "Generated Sentence",
+  heroFieldNounValue: "Architect",
+  heroFieldVerbValue: "Designing",
   heroGrammarFeedback: "Grammar feedback",
   heroToneNote: "Tone note",
   featCapabilities: "Capabilities",
@@ -261,6 +293,29 @@ const en: Translations = {
   imCopy: "Copy",
   imCopied: "Copied",
   langToggleLabel: "தமிழ்",
+  phNoun: "e.g. Architect",
+  phVerb: "e.g. Design",
+  phTopic: "e.g. Sustainability",
+  phDialogueTopic: "Describe your topic...",
+  phPersonaA: "e.g. Teacher",
+  phPersonaB: "e.g. Student",
+  tensePresSimple: "Present Simple",
+  tensePresContinuous: "Present Continuous",
+  tensePresPerf: "Present Perfect",
+  tensePastSimple: "Past Simple",
+  tensePastContinuous: "Past Continuous",
+  tensePastPerf: "Past Perfect",
+  tenseFutSimple: "Future Simple",
+  tenseFutContinuous: "Future Continuous",
+  genderNeutral: "Neutral",
+  genderMasculine: "Masculine",
+  genderFeminine: "Feminine",
+  complexityFoundational: "Foundational",
+  complexityIntermediate: "Intermediate",
+  complexityAcademic: "Academic",
+  levelBeginner: "Beginner",
+  levelIntermediate: "Intermediate",
+  levelAdvanced: "Advanced",
 };
 
 // ── Tamil strings ────────────────────────────────────────────────────
@@ -283,6 +338,8 @@ const ta: Translations = {
   heroFieldNoun: "பொருள் (பெயர்ச்சொல்)",
   heroFieldVerb: "செயல் (வினைச்சொல்)",
   heroFieldSentence: "உருவாக்கப்பட்ட வாக்கியம்",
+  heroFieldNounValue: "கட்டிடக்கலைஞர்",
+  heroFieldVerbValue: "வடிவமைக்கிறார்",
   heroGrammarFeedback: "இலக்கண கருத்து",
   heroToneNote: "தொனி குறிப்பு",
   featCapabilities: "திறன்கள்",
@@ -390,6 +447,29 @@ const ta: Translations = {
   imCopy: "நகலெடு",
   imCopied: "நகலெடுக்கப்பட்டது",
   langToggleLabel: "English",
+  phNoun: "எ.கா. கட்டிடக்கலைஞர்",
+  phVerb: "எ.கா. வடிவமைக்கு",
+  phTopic: "எ.கா. நிலைத்தன்மை",
+  phDialogueTopic: "உங்கள் தலைப்பை விவரிக்கவும்...",
+  phPersonaA: "எ.கா. ஆசிரியர்",
+  phPersonaB: "எ.கா. மாணவர்",
+  tensePresSimple: "நிகழ்கால எளிமை",
+  tensePresContinuous: "நிகழ்கால தொடர்",
+  tensePresPerf: "நிகழ்கால முற்று",
+  tensePastSimple: "இறந்தகால எளிமை",
+  tensePastContinuous: "இறந்தகால தொடர்",
+  tensePastPerf: "இறந்தகால முற்று",
+  tenseFutSimple: "எதிர்கால எளிமை",
+  tenseFutContinuous: "எதிர்கால தொடர்",
+  genderNeutral: "நடுநிலை",
+  genderMasculine: "ஆண்பால்",
+  genderFeminine: "பெண்பால்",
+  complexityFoundational: "அடிப்படை",
+  complexityIntermediate: "இடைநிலை",
+  complexityAcademic: "கல்வி நிலை",
+  levelBeginner: "தொடக்க நிலை",
+  levelIntermediate: "இடைநிலை",
+  levelAdvanced: "மேம்பட்ட நிலை",
 };
 
 // ── Context ──────────────────────────────────────────────────────────
