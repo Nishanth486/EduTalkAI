@@ -215,14 +215,14 @@ Output Language: ${data.language}
 
 Note: The input parameters above may be written in English or Tamil. Understand them regardless of script, then generate ALL output in ${data.language}.
 
-Respond as JSON with this shape:
+Respond as JSON with this shape (ALL text values must be in ${data.language}):
 {
   "sentence": "the generated sentence",
   "highlightedVerb": "the conjugated verb phrase as it appears in sentence",
   "grammarScore": 0-100 integer,
-  "tone": "short tone label e.g. Professional / Casual / Academic",
-  "note": "one sentence pedagogical note about the structure",
-  "alternatives": ["one alternative phrasing", "another alternative phrasing"]
+  "tone": "short tone label in ${data.language} e.g. தொழில்முறை / Casual / Academic",
+  "note": "one sentence pedagogical note about the structure, written in ${data.language}",
+  "alternatives": ["one alternative phrasing in ${data.language}", "another alternative phrasing in ${data.language}"]
 }`;
 
     const content = await callAI({
@@ -268,22 +268,22 @@ Output Language: ${data.language}
 
 Note: The topic and persona names above may be written in English or Tamil. Understand them regardless of script, then generate the ENTIRE dialogue and all vocabulary meanings in ${data.language}.
 
-Return JSON:
+Return JSON (ALL text values must be in ${data.language}):
 {
-  "title": "short dialogue title",
+  "title": "short dialogue title in ${data.language}",
   "turns": [
     {
       "speaker": "name",
-      "text": "dialogue"
+      "text": "dialogue line in ${data.language}"
     }
   ],
   "vocabulary": [
     {
-      "word":"...",
-      "meaning":"..."
+      "word": "word in ${data.language}",
+      "meaning": "meaning/definition in ${data.language}"
     }
   ],
-  "grammarFocus":"..."
+  "grammarFocus": "grammar explanation written entirely in ${data.language}"
 }
 `;
 
@@ -329,18 +329,18 @@ Output Language: ${data.language}
 Generate EVERYTHING (scene description, objects, sentences, dialogue) in ${data.language}.
 
 
-Return JSON:
+Return JSON (ALL text values must be in ${data.language} — including objects, scene, sentences, dialogue, tense labels, and style labels):
 {
-  "scene": "one-sentence neutral description of the scene",
-  "objects": ["short labels of 4-6 key entities/objects"],
+  "scene": "one-sentence neutral description of the scene in ${data.language}",
+  "objects": ["key object/entity labels in ${data.language}"],
   "sentences": [
-    {"text":"sentence 1","tense":"...","style":"Descriptive/Academic/Casual"},
-    {"text":"sentence 2","tense":"...","style":"..."},
-    {"text":"sentence 3","tense":"...","style":"..."}
+    {"text":"sentence 1 in ${data.language}","tense":"tense name in ${data.language}","style":"style label in ${data.language}"},
+    {"text":"sentence 2 in ${data.language}","tense":"...","style":"..."},
+    {"text":"sentence 3 in ${data.language}","tense":"...","style":"..."}
   ],
   "dialogue": [
-    {"speaker":"Teacher","text":"..."},
-    {"speaker":"Student","text":"..."}
+    {"speaker":"Teacher","text":"dialogue in ${data.language}"},
+    {"speaker":"Student","text":"dialogue in ${data.language}"}
   ]
 }`;
 
