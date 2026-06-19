@@ -306,8 +306,8 @@ function SentenceModule() {
         {!m.data && !m.isPending && (
           <EmptyState
             icon={Wand2}
-            title="Your sentence will appear here"
-            body="Set the parameters on the left and hit Generate."
+            title={t.smEmptyTitle}
+            body={t.smEmptyBody}
           />
         )}
         {m.data && !m.isPending && (
@@ -337,7 +337,7 @@ function SentenceModule() {
                 }
                 className="mt-3"
               >
-                🔊 Read Aloud
+                {t.smReadAloud}
               </Button>
             </div>
 
@@ -503,15 +503,15 @@ function DialogueModule() {
         {!m.data && !m.isPending && (
           <EmptyState
             icon={MessageSquareText}
-            title="Your dialogue will appear here"
-            body="Describe a topic and pick two personas to start."
+            title={t.dmEmptyTitle}
+            body={t.dmEmptyBody}
           />
         )}
         {m.data && !m.isPending && (
           <div className="space-y-6">
             <div>
               <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
-                Dialogue
+                {t.dmDialogueLabel}
               </div>
               <h3 className="font-display text-2xl font-bold text-heading">
                 {m.data.title}
@@ -703,8 +703,8 @@ function ImageModule() {
         {!m.data && !m.isPending && (
           <EmptyState
             icon={ImageIcon}
-            title="Visual analysis output"
-            body="Upload an image and EduTalk AI will extract entities, write descriptions, and build a teacher-student dialogue."
+            title={t.imEmptyTitle}
+            body={t.imEmptyBody}
           />
         )}
         {m.data && !m.isPending && (
@@ -724,7 +724,7 @@ function ImageModule() {
                   )
                 }
               >
-                🔊 Read Scene
+                {t.imReadScene}
               </Button>
             </div>
             <div>
