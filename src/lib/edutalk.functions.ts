@@ -253,6 +253,7 @@ export const generateDialogue = createServerFn({ method: "POST" })
       turns: z.number().int().min(2).max(10),
       level: z.enum(["Beginner", "Intermediate", "Advanced"]),
       language: z.enum(["English", "Tamil"]).default("English"),
+      uiLang: z.enum(["English", "Tamil"]).default("English"),
     }),
   )
   .handler(async ({ data }) => {
@@ -265,15 +266,20 @@ Topic:
 ${data.topic}
 
 Output Language: ${data.language}
+UI Language: ${data.uiLang}
 
-Note: The topic and persona names above may be written in English or Tamil. Understand them regardless of script, then generate the ENTIRE dialogue and all vocabulary meanings in ${data.language}.
+Note: The topic and persona names may be written in English or Tamil — understand them regardless of script.
 
-Return JSON (ALL text values must be in ${data.language}):
+IMPORTANT RULES:
+- The "speaker" field must ALWAYS be in ${data.uiLang} (the UI language). Use the persona names as given but written in ${data.uiLang} script.
+- The "text" (dialogue lines), "title", "vocabulary" words/meanings, and "grammarFocus" must ALL be in ${data.language} (the output language).
+
+Return JSON:
 {
   "title": "short dialogue title in ${data.language}",
   "turns": [
     {
-      "speaker": "name",
+      "speaker": "persona name in ${data.uiLang}",
       "text": "dialogue line in ${data.language}"
     }
   ],
@@ -317,6 +323,7 @@ export const describeImage = createServerFn({ method: "POST" })
         ),
       tense: z.string().trim().min(1).max(40).default("Present Continuous"),
       language: z.enum(["English", "Tamil"]).default("English"),
+      uiLang: z.enum(["English", "Tamil"]).default("English"),
     }),
   )
   .handler(async ({ data }) => {
@@ -325,8 +332,10 @@ export const describeImage = createServerFn({ method: "POST" })
 Look at this image.
 
 Output Language: ${data.language}
+UI Language: ${data.uiLang}
 
-Generate EVERYTHING (scene description, objects, sentences, dialogue) in ${data.language}.
+Generate EVERYTHING (scene description, objects, sentences, dialogue text) in ${data.language}.
+IMPORTANT: The "speaker" names in dialogue must be in ${data.uiLang}, not ${data.language}.
 
 
 Return JSON (ALL text values must be in ${data.language} — including objects, scene, sentences, dialogue, tense labels, and style labels):
@@ -339,8 +348,8 @@ Return JSON (ALL text values must be in ${data.language} — including objects, 
     {"text":"sentence 3 in ${data.language}","tense":"...","style":"..."}
   ],
   "dialogue": [
-    {"speaker":"Teacher","text":"dialogue in ${data.language}"},
-    {"speaker":"Student","text":"dialogue in ${data.language}"}
+    {"speaker":"Teacher name in ${data.uiLang}","text":"dialogue in ${data.language}"},
+    {"speaker":"Student name in ${data.uiLang}","text":"dialogue in ${data.language}"}
   ]
 }`;
 
