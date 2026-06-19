@@ -386,7 +386,7 @@ function highlight(sentence: string, phrase: string) {
 ============================================================ */
 function DialogueModule() {
   const fn = useServerFn(generateDialogue);
-  const { t } = useI18n();
+  const { t, uiLang } = useI18n();
   const [topic, setTopic] = useState(
     "",
   );
@@ -399,7 +399,7 @@ function DialogueModule() {
   const [language, setLanguage] =
   useState("English");
   const m = useMutation({
-    mutationFn: () => fn({ data: { topic, personaA, personaB, turns, level, language } }),
+    mutationFn: () => fn({ data: { topic, personaA, personaB, turns, level, language, uiLang } }),
     onError: (e: Error) => toast.error(e.message),
   });
 
@@ -589,7 +589,7 @@ function DialogueModule() {
 ============================================================ */
 function ImageModule() {
   const fn = useServerFn(describeImage);
-  const { t } = useI18n();
+  const { t, uiLang } = useI18n();
   const [dataUrl, setDataUrl] = useState<string | null>(null);
   const [tense, setTense] = useState("Present Continuous");
   const fileRef = useRef<HTMLInputElement>(null);
@@ -598,7 +598,7 @@ function ImageModule() {
   const m = useMutation({
     mutationFn: () => {
       if (!dataUrl) throw new Error("Please upload an image first");
-      return fn({ data: { imageDataUrl: dataUrl, tense, language } });
+      return fn({ data: { imageDataUrl: dataUrl, tense, language, uiLang } });
     },
     onError: (e: Error) => toast.error(e.message),
   });
