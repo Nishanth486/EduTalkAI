@@ -180,13 +180,13 @@ function SentenceModule() {
             label={t.smNoun.split("(")[0].trim()}
             value={noun}
             onChange={setNoun}
-            placeholder="e.g. Architect"
+            placeholder={t.phNoun}
           />
           <FieldInput
             label={t.smVerb.split("(")[0].trim()}
             value={verb}
             onChange={setVerb}
-            placeholder="e.g. Design"
+            placeholder={t.phVerb}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -202,18 +202,18 @@ function SentenceModule() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {[
-                  "Present Simple",
-                  "Present Continuous",
-                  "Present Perfect",
-                  "Past Simple",
-                  "Past Continuous",
-                  "Past Perfect",
-                  "Future Simple",
-                  "Future Continuous",
-                ].map((t) => (
-                  <SelectItem key={t} value={t}>
-                    {t}
+                {([
+                  ["Present Simple", t.tensePresSimple],
+                  ["Present Continuous", t.tensePresContinuous],
+                  ["Present Perfect", t.tensePresPerf],
+                  ["Past Simple", t.tensePastSimple],
+                  ["Past Continuous", t.tensePastContinuous],
+                  ["Past Perfect", t.tensePastPerf],
+                  ["Future Simple", t.tenseFutSimple],
+                  ["Future Continuous", t.tenseFutContinuous],
+                ] as [string, string][]).map(([val, label]) => (
+                  <SelectItem key={val} value={val}>
+                    {label}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -231,9 +231,13 @@ function SentenceModule() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {["Neutral", "Masculine", "Feminine"].map((g) => (
-                  <SelectItem key={g} value={g}>
-                    {g}
+                {([
+                  ["Neutral", t.genderNeutral],
+                  ["Masculine", t.genderMasculine],
+                  ["Feminine", t.genderFeminine],
+                ] as [string, string][]).map(([val, label]) => (
+                  <SelectItem key={val} value={val}>
+                    {label}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -244,11 +248,11 @@ function SentenceModule() {
           label={t.smTopic}
           value={topic}
           onChange={setTopic}
-          placeholder="e.g. Sustainability"
+          placeholder={t.phTopic}
         />
         <div className="space-y-3">
           <Label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
-            {t.smComplexity}: <span className="text-brand">{complexity}</span>
+            {t.smComplexity}: <span className="text-brand">{complexity === "Foundational" ? t.complexityFoundational : complexity === "Academic" ? t.complexityAcademic : t.complexityIntermediate}</span>
           </Label>
           <Slider
             value={[
@@ -263,8 +267,8 @@ function SentenceModule() {
             }
           />
           <div className="flex justify-between text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-            <span>Foundational</span>
-            <span>Academic</span>
+            <span>{t.complexityFoundational}</span>
+            <span>{t.complexityAcademic}</span>
           </div>
         </div>
         <div className="space-y-2">
@@ -412,7 +416,7 @@ function DialogueModule() {
             onChange={(e) => setTopic(e.target.value)}
             rows={3}
             maxLength={160}
-            placeholder="Describe your topic..."
+            placeholder={t.phDialogueTopic}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -420,13 +424,13 @@ function DialogueModule() {
             label={t.dmPersonaA}
             value={personaA}
             onChange={setPersonaA}
-            placeholder="e.g. Teacher"
+            placeholder={t.phPersonaA}
           />
           <FieldInput
             label={t.dmPersonaB}
             value={personaB}
             onChange={setPersonaB}
-            placeholder="e.g. Student"
+            placeholder={t.phPersonaB}
           />
         </div>
         <div className="space-y-3">
@@ -453,9 +457,13 @@ function DialogueModule() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {["Beginner", "Intermediate", "Advanced"].map((l) => (
-                <SelectItem key={l} value={l}>
-                  {l}
+              {([
+                ["Beginner", t.levelBeginner],
+                ["Intermediate", t.levelIntermediate],
+                ["Advanced", t.levelAdvanced],
+              ] as [string, string][]).map(([val, label]) => (
+                <SelectItem key={val} value={val}>
+                  {label}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -647,15 +655,15 @@ function ImageModule() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {[
-                "Present Simple",
-                "Present Continuous",
-                "Past Simple",
-                "Past Continuous",
-                "Future Simple",
-              ].map((t) => (
-                <SelectItem key={t} value={t}>
-                  {t}
+              {([
+                ["Present Simple", t.tensePresSimple],
+                ["Present Continuous", t.tensePresContinuous],
+                ["Past Simple", t.tensePastSimple],
+                ["Past Continuous", t.tensePastContinuous],
+                ["Future Simple", t.tenseFutSimple],
+              ] as [string, string][]).map(([val, label]) => (
+                <SelectItem key={val} value={val}>
+                  {label}
                 </SelectItem>
               ))}
             </SelectContent>
