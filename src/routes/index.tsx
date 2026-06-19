@@ -113,8 +113,8 @@ function Hero() {
 
             <div className="space-y-5 sm:space-y-6">
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <Field label={t.heroFieldNoun} value="Architect" />
-                <Field label={t.heroFieldVerb} value="Designing" />
+                <Field label={t.heroFieldNoun} value={t.heroFieldNounValue} />
+                <Field label={t.heroFieldVerb} value={t.heroFieldVerbValue} />
               </div>
 
               <div className="space-y-2">
