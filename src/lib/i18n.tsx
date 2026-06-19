@@ -106,6 +106,14 @@ export interface Translations {
   smTone: string;
   smNote: string;
   smAlternatives: string;
+  smReadAloud: string;
+  // Empty states
+  smEmptyTitle: string;
+  smEmptyBody: string;
+  dmEmptyTitle: string;
+  dmEmptyBody: string;
+  imEmptyTitle: string;
+  imEmptyBody: string;
   // Dialogue module
   dmTopic: string;
   dmPersonaA: string;
@@ -118,6 +126,7 @@ export interface Translations {
   dmVocabulary: string;
   dmGrammarFocus: string;
   dmSpeak: string;
+  dmDialogueLabel: string;
   // Image module
   imUploadPrompt: string;
   imUploadSub: string;
@@ -132,6 +141,8 @@ export interface Translations {
   imSpeak: string;
   imCopy: string;
   imCopied: string;
+  imReadScene: string;
+  imReadSentence: string;
   // Language toggle
   langToggleLabel: string;
   // Placeholders
@@ -268,6 +279,13 @@ const en: Translations = {
   smTone: "Tone",
   smNote: "Pedagogical Note",
   smAlternatives: "Alternatives",
+  smReadAloud: "Read Aloud",
+  smEmptyTitle: "Your sentence will appear here",
+  smEmptyBody: "Set the parameters on the left and hit Generate.",
+  dmEmptyTitle: "Your dialogue will appear here",
+  dmEmptyBody: "Describe a topic and pick two personas to start.",
+  imEmptyTitle: "Visual analysis output",
+  imEmptyBody: "Upload an image and EduTalk AI will extract entities, write descriptions, and build a teacher-student dialogue.",
   dmTopic: "Topic",
   dmPersonaA: "Speaker A",
   dmPersonaB: "Speaker B",
@@ -279,6 +297,7 @@ const en: Translations = {
   dmVocabulary: "Vocabulary",
   dmGrammarFocus: "Grammar Focus",
   dmSpeak: "Speak",
+  dmDialogueLabel: "Dialogue",
   imUploadPrompt: "Click or drag an image here",
   imUploadSub: "PNG, JPG, WEBP — max 5 MB",
   imTense: "Tense",
@@ -292,6 +311,8 @@ const en: Translations = {
   imSpeak: "Speak",
   imCopy: "Copy",
   imCopied: "Copied",
+  imReadScene: "Read Scene",
+  imReadSentence: "Read",
   langToggleLabel: "தமிழ்",
   phNoun: "e.g. Architect",
   phVerb: "e.g. Design",
@@ -422,6 +443,13 @@ const ta: Translations = {
   smTone: "தொனி",
   smNote: "கற்பித்தல் குறிப்பு",
   smAlternatives: "மாற்று வழிகள்",
+  smReadAloud: "உரக்கமாக படிக்கவும்",
+  smEmptyTitle: "உங்கள் வாக்கியம் இங்கே தோன்றும்",
+  smEmptyBody: "இடதுபுறம் அளவுருக்களை அமைத்து உருவாக்கு என்பதை அழுத்தவும்.",
+  dmEmptyTitle: "உங்கள் உரையாடல் இங்கே தோன்றும்",
+  dmEmptyBody: "ஒரு தலைப்பை விவரித்து இரண்டு பாத்திரங்களை தேர்ந்தெடுக்கவும்.",
+  imEmptyTitle: "காட்சி பகுப்பாய்வு வெளியீடு",
+  imEmptyBody: "படத்தை பதிவேற்றவும், EduTalk AI பொருட்களை கண்டறிந்து விளக்கங்கள் எழுதி ஆசிரியர்-மாணவர் உரையாடலை உருவாக்கும்.",
   dmTopic: "தலைப்பு",
   dmPersonaA: "பேச்சாளர் அ",
   dmPersonaB: "பேச்சாளர் ஆ",
@@ -433,6 +461,7 @@ const ta: Translations = {
   dmVocabulary: "சொல்லகராதி",
   dmGrammarFocus: "இலக்கண கவனம்",
   dmSpeak: "பேசு",
+  dmDialogueLabel: "உரையாடல்",
   imUploadPrompt: "படத்தை இங்கே கிளிக் செய்யவும் அல்லது இழுக்கவும்",
   imUploadSub: "PNG, JPG, WEBP — அதிகபட்சம் 5 MB",
   imTense: "காலம்",
@@ -446,6 +475,8 @@ const ta: Translations = {
   imSpeak: "பேசு",
   imCopy: "நகலெடு",
   imCopied: "நகலெடுக்கப்பட்டது",
+  imReadScene: "காட்சியை படிக்கவும்",
+  imReadSentence: "படிக்கவும்",
   langToggleLabel: "English",
   phNoun: "எ.கா. கட்டிடக்கலைஞர்",
   phVerb: "எ.கா. வடிவமைக்கு",
