@@ -211,15 +211,9 @@ Parameters:
 - Topic: ${data.topic}
 - Complexity: ${data.complexity}
 
-Language: ${data.language}
+Output Language: ${data.language}
 
-Generate ALL responses in the selected language.
-
-Supported:
-English
-Tamil
-
-Generate the entire response in ${data.language} language.
+Note: The input parameters above may be written in English or Tamil. Understand them regardless of script, then generate ALL output in ${data.language}.
 
 Respond as JSON with this shape:
 {
@@ -270,12 +264,9 @@ Create a ${data.turns}-turn dialogue between
 Topic:
 ${data.topic}
 
-Language:
-${data.language}
+Output Language: ${data.language}
 
-Generate the ENTIRE dialogue in ${data.language}.
-
-All vocabulary meanings must also be in ${data.language}.
+Note: The topic and persona names above may be written in English or Tamil. Understand them regardless of script, then generate the ENTIRE dialogue and all vocabulary meanings in ${data.language}.
 
 Return JSON:
 {
@@ -333,17 +324,9 @@ export const describeImage = createServerFn({ method: "POST" })
     const userText = `
 Look at this image.
 
-Language:
-${data.language}
+Output Language: ${data.language}
 
-Generate EVERYTHING in ${data.language}.
-
-Scene description,
-Objects,
-Sentences,
-Dialogue
-
-must all be in ${data.language}.
+Generate EVERYTHING (scene description, objects, sentences, dialogue) in ${data.language}.
 
 
 Return JSON:
